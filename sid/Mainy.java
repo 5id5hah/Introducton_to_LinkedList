@@ -11,6 +11,11 @@ public class Mainy {
         list.Insert(14);
         list.Insert(19);
         list.Insert(21);
+        list.Insu(1,2);
+        list.Display();
+        System.out.println(list.DeleteFirst());
+        list.Display();
+        list.InsecRec(88,3);
         list.Display();
     }
 }

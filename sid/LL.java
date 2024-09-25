@@ -18,7 +18,24 @@ public class LL {
         }
         size += 1;
     }
-     public void InsertLast(int value){
+    public void Insu(int val, int index){
+        if( index == 0){
+            Insert(val);
+            return;
+        }
+        if (index == size){
+            InsertLast(val);
+            return;
+        }
+        Node temp = head;
+        for (int i = 0; i < index-1 ; i++) {
+            temp = temp.next;
+        }
+        Node node = new Node(val, temp.next);
+        temp.next = node;
+        size++;
+    }
+    public void InsertLast(int value){
       if (tail == null){
           Insert(value);
           return;
@@ -27,7 +44,15 @@ public class LL {
       tail.next = node;
       tail = node;
       size += 1;
-
+    }
+    public int DeleteFirst(){
+        int val = head.value;
+        head = head.next;
+        if(head == null){
+            tail = null;
+        }
+        size--;
+        return val;
     }
     public void Display(){
         Node temp = head;
@@ -50,4 +75,18 @@ private class Node{
         this.next = next;
     }
 }
+public void InsecRec(int val, int index){
+
+        head = InsecRec(val, index, head);
+    }
+    public Node InsecRec(int val, int index, Node node ){
+        if (index == 0){
+            Node temp = new Node(val,node);
+            size++;
+            return temp;
+
+        }
+        node.next = InsecRec(val,index-1,node.next);
+        return node;
+    }
 }

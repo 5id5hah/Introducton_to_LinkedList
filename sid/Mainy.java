@@ -6,7 +6,7 @@ public class Mainy {
         list.Insert(3);
         list.Insert(5);
         list.Insert(8);
-        list.Insert(10);
+       // list.Insert(10);
         list.InsertLast(56);
         list.Insert(14);
         list.Insert(19);
